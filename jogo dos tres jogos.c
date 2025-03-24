@@ -34,7 +34,7 @@ case 1:
 #ifdef _WIN32
 system("cls");//executar código em Windows
 #else
-system("clear");//executar código em Unix(Linux/MacOS)
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
 printf("PERGUNTAS E RESPOSTAS\n");
 printf("Pressione 1 para continuar ou 4 para voltar\n");
@@ -191,7 +191,7 @@ tecla =getchar();
 switch(resposta5){
 case 1:
 printf("Pergunta 5-)\n");
-printf("QUAL FOI A PRIMEIRA LINGUAGE DE PROGRAMAÇÃO\n");
+printf("QUAL FOI A PRIMEIRA LINGUAGEM DE PROGRAMAÇÃO\n");
 printf("a) C\n");
 printf("b) FORTRAN\n");
 printf("c) BASIC\n");
@@ -216,8 +216,35 @@ break;
 
 //Fim do jogo "PERGUNTAS E RESPOSTAS"
 
-printf("Fim do jogo PERGUNTAS E RESPOSTAS");
-printf("Você acertpu x perguntas");
+printf("Fim do jogo PERGUNTAS E RESPOSTAS\n");
+printf("Você acertou x perguntas\n");
+
+//Seleção de jogo "Cobra na Caixa"
+
+int jogo2, jogoinicio2;
+
+scanf("%d", &jogo2);
+switch(jogo2){
+case 2:
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+printf("COBRA NA CAIXA\n");
+printf("Pressione 2 para continuar ou 4 para voltar\n");
+break;
+}
+scanf("%d", &jogoinicio2);
+switch(jogoinicio2){
+case 2:
+printf("O jogo COBRA NA CAIXA é um jogo de escolhas...\n");
+printf("Você e mais outro jogador estão presos em uma tumba egípicia antiga, e é seu objetivo fugir dessa\n");
+printf("Cuidado... Pois nunca se sabe qual é o caminho certo\n");
+printf("E nunca se sabe onde as cobras espreitam");
+}
+
+
 
 
 
@@ -225,5 +252,7 @@ printf("Você acertpu x perguntas");
 }
 
 
+
+	
 
 	

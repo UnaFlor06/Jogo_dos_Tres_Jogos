@@ -4,23 +4,27 @@
 int main()
 {
 //FUNCIONALIDADES BÁSICAS DO MENU
+    //Obeservações sobre o menu:
+        //A princípio, o menu utilizava "switch case" para suas funcionalidades.
+        //Ainda é possível ver alguns resquícios no código.
+        //Por isso o usuário precisa apertar a tecla de seleção mais de uma vez.
+        //A intenção é mudar isso posteriormente, mas, pelo momento, deixa assim porque o menu está funcionando.
 int tecla;
 
     // Texto placeholder (final será em ASCII)
 printf("Joguinho Dos Três Jogos\n");
-printf("Pressione 5\n");
-scanf("%d", &tecla);
-switch(tecla)
-{
-case 5 :
 printf("Pressione as teclas para jogar os jogos\n");
 printf("1 - Perguntas e Respostas\n");
 printf("2 - Cobra na Caixa!\n");
 printf("3 - Gousma of War\n");
 printf("4 - Sair\n");
-break;
-}
+scanf("%d", &tecla);
+
+
 //SELEÇÃO DE JOGO "Perguntas e Respostas"
+
+if(tecla == 1){
+    printf("Se você deseja incializar o jogo PERGUNTAS E RESPOSTAS, pressione 1");
 
 int resposta1;
 int resposta2;
@@ -28,6 +32,7 @@ int resposta3;
 int resposta4;
 int resposta5;
 int jogo, jogoinicio;
+
 scanf("%d", &jogo);
 switch(jogo){
 case 1:
@@ -46,7 +51,6 @@ case 1:
 printf("O jogo 'Perguntas e Respostas' é muito simples. Você, jogador e/ou jogadora seram inquiridos um total de 5 perguntas dividias em A, B, C e D\n");
 printf("Para ganhar nesse jogo, é necessário responder todas as perguntas corretamente\n");
 printf("Pressione 1 para continuar ou 4 para voltar\n");
-           
 break;
 }
 
@@ -214,12 +218,17 @@ printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
 break;
 }
 
+
 //Fim do jogo "PERGUNTAS E RESPOSTAS"
 
 printf("Fim do jogo PERGUNTAS E RESPOSTAS\n");
 printf("Você acertou x perguntas\n");
 
+}
 //Seleção de jogo "Cobra na Caixa"
+
+else if(tecla == 2){
+printf("Se você deseja inicializar o jogo COBRA NA CAIXA, pressione 2");
 
 int jogo2, jogoinicio2;
 
@@ -241,7 +250,8 @@ case 2:
 printf("O jogo COBRA NA CAIXA é um jogo de escolhas...\n");
 printf("Você e mais outro jogador estão presos em uma tumba egípicia antiga, e é seu objetivo fugir dessa\n");
 printf("Cuidado... Pois nunca se sabe qual é o caminho certo\n");
-printf("E nunca se sabe onde as cobras espreitam");
+printf("E nunca se sabe onde as cobras espreitam...");
+}
 }
 
 

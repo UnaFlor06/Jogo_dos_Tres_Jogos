@@ -250,10 +250,58 @@ case 2:
 printf("O jogo COBRA NA CAIXA é um jogo de escolhas...\n");
 printf("Você e mais outro jogador estão presos em uma tumba egípicia antiga, e é seu objetivo fugir dessa\n");
 printf("Cuidado... Pois nunca se sabe qual é o caminho certo\n");
-printf("E nunca se sabe onde as cobras espreitam...");
-}
+printf("E nunca se sabe onde as cobras espreitam...\n");
+printf("Pressione 2 para seguir para a seleção de personagens\n");
+break;
 }
 
+int pcselect;
+int pc1select, pc2select;
+int Fulano, Fulana, Ciclano, Ciclana, Beltrano, Beltrana, Nome;
+
+scanf("%d", &pcselect);
+switch(pcselect){
+case 2:
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+printf("SELECIONE SEU PERSONAGEM\n");
+printf("1-) Fulano\n");
+printf("2-) Ciclano\n");
+printf("3-) Beltrano\n");
+printf("4-) Ciclana\n");
+printf("5-) Beltrana\n");
+printf("6-) Fulana\n");
+printf("7-) Nome\n");
+
+scanf("%d", &pc1select);
+switch(pc1select){
+case 1:
+pc1select == Fulano;
+if(pc1select == Fulano){
+printf("Jogador 1 escolheu Fulano");
+}
+case 2:
+case 3:
+case 4:
+case 5:
+case 6:
+case 7:
+}
+scanf("%d", &pc2select);
+switch(pc2select){
+case 1:
+case 2:
+case 3:
+case 4:
+case 5:
+case 6:
+case 7:
+}
+}
+}
 
 
 

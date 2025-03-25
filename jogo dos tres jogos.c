@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//Provérbio do dia: Suicídio é preferível à desenvolver front-end em C
+//-Alan Turing, pai da computaria de fornicação
 int main()
 {
 //FUNCIONALIDADES BÁSICAS DO MENU
@@ -12,19 +13,21 @@ int main()
 int tecla;
 
     // Texto placeholder (final será em ASCII)
-printf("Joguinho Dos Três Jogos\n");
-printf("Pressione as teclas para jogar os jogos\n");
+printf("Joguinho Dos Três Jogos\n"); //placeholder
+printf("Pressione as teclas para jogar os jogos\n"); //placeholder
 printf("1 - Perguntas e Respostas\n");
 printf("2 - Cobra na Caixa!\n");
 printf("3 - Gousma of War\n");
 printf("4 - Sair\n");
 scanf("%d", &tecla);
 
+//AA Fix:
+//A UX não está muito intuitiva pelo momento, preciso que você remova a necessidade de apertar tantos botões.
 
 //SELEÇÃO DE JOGO "Perguntas e Respostas"
 
 if(tecla == 1){
-    printf("Se você deseja incializar o jogo PERGUNTAS E RESPOSTAS, pressione 1");
+printf("Se você deseja incializar o jogo PERGUNTAS E RESPOSTAS, pressione 1\n");
 
 int resposta1;
 int resposta2;
@@ -38,7 +41,7 @@ switch(jogo){
 case 1:
 #ifdef _WIN32
 system("cls");//executar código em Windows
-#else
+#else//não altere esse código, se não o terminal não será limpo
 system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
 printf("PERGUNTAS E RESPOSTAS\n");
@@ -222,13 +225,13 @@ break;
 //Fim do jogo "PERGUNTAS E RESPOSTAS"
 
 printf("Fim do jogo PERGUNTAS E RESPOSTAS\n");
-printf("Você acertou x perguntas\n");
+printf("Você acertou x perguntas\n"); //A intenção era fazer com que as quantidades de acertos do player seja contada.
 
 }
 //Seleção de jogo "Cobra na Caixa"
 
 else if(tecla == 2){
-printf("Se você deseja inicializar o jogo COBRA NA CAIXA, pressione 2");
+printf("Se você deseja inicializar o jogo COBRA NA CAIXA, pressione 2\n");
 
 int jogo2, jogoinicio2;
 
@@ -237,7 +240,7 @@ switch(jogo2){
 case 2:
 #ifdef _WIN32
 system("cls");//executar código em Windows
-#else
+#else //Não altere esse código, se não o terminal não será limpo
 system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
 printf("COBRA NA CAIXA\n");
@@ -257,7 +260,13 @@ break;
 
 int pcselect;
 int pc1select, pc2select;
-int Fulano, Fulana, Ciclano, Ciclana, Beltrano, Beltrana, Nome;
+int Fulano = 1;
+int Fulana = 2;
+int Ciclano = 3;
+int Ciclana = 4;
+int Beltrano = 5;
+int Beltrana = 6;
+int Nome = 7;
 
 scanf("%d", &pcselect);
 switch(pcselect){
@@ -267,39 +276,117 @@ system("cls");//executar código em Windows
 #else
 system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
-printf("SELECIONE SEU PERSONAGEM\n");
+printf("SELECIONE SEU PERSONAGEM! Jogador 1\n");
 printf("1-) Fulano\n");
-printf("2-) Ciclano\n");
-printf("3-) Beltrano\n");
+printf("2-) Fulana\n");
+printf("3-) Ciclano\n");
 printf("4-) Ciclana\n");
-printf("5-) Beltrana\n");
-printf("6-) Fulana\n");
+printf("5-) Beltrano\n");
+printf("6-) Beltrana\n");
 printf("7-) Nome\n");
+
+//Player 1 select
 
 scanf("%d", &pc1select);
 switch(pc1select){
 case 1:
-pc1select == Fulano;
-if(pc1select == Fulano){
-printf("Jogador 1 escolheu Fulano");
+pc1select == 1;
+if(pc1select == 1){
+printf("Jogador 1 escolheu Fulano\n");
 }
+break;
 case 2:
-case 3:
-case 4:
-case 5:
-case 6:
-case 7:
+pc1select == 2;
+if(pc1select == 2){
+printf("Jogador 1 escolheu Fulana\n");
 }
+break;
+case 3:
+pc1select == 3;
+if(pc1select == 3){
+printf("Jogador 1 escolheu Ciclano\n");
+}
+break;
+case 4:
+pc1select == 4;
+if(pc1select == 4){
+printf("Jogador 1 escolheu Ciclan\n");
+}
+break;
+case 5:
+pc1select == 5;
+if(pc1select == 5){
+printf("Jogador 1 escolheu Beltrano\n");    
+}
+break;
+case 6:
+pc1select == 6;
+if(pc1select == 6){
+printf("Jogador 1 escolheu Beltrana\n");
+}
+break;
+case 7:
+pc1select == 7;
+if(pc1select == 7){
+printf("Jogador 1 escolheu Nome\n");
+}
+break;
+}
+
+//Player 2 select
+
+printf("SELECIONE SEU PERSONAGEM! Jogador 2\n");
+
 scanf("%d", &pc2select);
 switch(pc2select){
 case 1:
-case 2:
-case 3:
-case 4:
-case 5:
-case 6:
-case 7:
+pc2select == 1;
+if(pc2select == 1){
+printf("Jogador 2 escolheu Fulano\n");
 }
+break;
+case 2:
+pc2select == 2;
+if(pc2select == 2){
+printf("Jogador 2 escolheu Fulana\n");
+}
+break;
+case 3:
+pc2select == 3;
+if(pc2select == 3){
+printf("Jogador 2 escolheu Ciclano\n");
+}
+break;
+case 4:
+pc2select == 4;
+if(pc2select == 4){
+printf("Jogador 2 escolheu Ciclana\n");
+}
+break;
+case 5:
+pc2select == 5;
+if(pc2select == 5){
+printf("Jogador 2 escolheu Beltrano\n");    
+}
+break;
+case 6:
+pc2select == 6;
+if(pc2select == 6){
+printf("Jogador 2 escolheu Beltrana\n");
+}
+break;
+case 7:
+pc2select == 7;
+if(pc2select == 7){
+printf("Jogador 2 escolheu Nome\n");
+}
+break;
+}
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
 }
 }
 

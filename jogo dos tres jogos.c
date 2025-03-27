@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Provérbio do dia: Suicídio é preferível à desenvolver front-end em C
-//-Alan Turing, pai da computaria de fornicação
 int main()
 {
 //FUNCIONALIDADES BÁSICAS DO MENU

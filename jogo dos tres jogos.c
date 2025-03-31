@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 //Provérbio do dia: Suicídio é preferível à desenvolver front-end em C
 int main()
 {
@@ -388,7 +389,14 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
 }
 }
-
+//Seed para as caixas e cobras
+srand(time(NULL));
+int min = 1;
+int max = 100000000000;
+int random_num = rand() % (max - min + 1) + min;
+//Geração de caixas e de cobras
+int caixa1, caixa2, caixa3, caixa4, caixa5;
+int cobra1, cobra2, cobra3, cobra4, cobra5;
 
 
 

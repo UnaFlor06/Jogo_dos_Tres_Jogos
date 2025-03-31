@@ -391,9 +391,8 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 }
 //Seed para as caixas e cobras
 srand(time(NULL));
-int min = 1;
-int max = 100000000000;
-int random_num = rand() % (max - min + 1) + min;
+int random_number = rand();
+printf("%d", random_number);
 //Geração de caixas e de cobras
 int caixa1, caixa2, caixa3, caixa4, caixa5;
 int cobra1, cobra2, cobra3, cobra4, cobra5;

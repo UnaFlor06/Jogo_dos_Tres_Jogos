@@ -390,94 +390,47 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 }
 }
 
-srand(time(NULL));
-int cobravalue = rand() % 5 + 1; 
-int cobra = cobravalue;
-
 //Input pc1 e pc2
 
 int pcchoice;
-int pcchoice2;
+int turn = 0;
 
-printf("Pressione de 1 a 5 para escolher uma caixa\n");
-do{
-    scanf("%d", &pcchoice);
-if(pcchoice == 1){
-printf("Jogador 1 escolheu a caixa 1\n");
-    if(pcchoice == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice2 == 1){
-printf("Jogador 2 escolheu a caixa 1\n");
-    if(pcchoice2 == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice == 2){
-printf("Jogador 1 escolheu a caixa 2\n");
-    if(pcchoice == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice2 == 2){
-printf("Jogador 2 escolheu a caixa 2\n");
-    if(pcchoice2 == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice == 3){
-printf("Jogador 1 escolheu a caixa 3\n");
-    if(pcchoice == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice2 == 3){
-printf("Jogador 2 escolheu a caixa 3\n");
-    if(pcchoice2 == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice == 4){
-printf("Jogador 1 escolheu a caixa 4\n");
-    if(pcchoice == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice2 == 4){
-printf("Jogador 2 escolheu a caixa 4\n");
-    if(pcchoice2 == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice == 5){
-printf("Jogador 1 escolheu a caixa 5\n");
-    if(pcchoice == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-if(pcchoice2 == 5){
-printf("Jogador 2 escolheu a caixa 5\n");
-    if(pcchoice2 == cobra){
-    printf("Você encontrou uma cobra!\n");
-    printf("Você perdeu...\n");
-}
-}
-}
-while(pcchoice, pcchoice2 != cobra);
+srand(time(NULL));
+turn = 1 + rand() % 3;
+int cobravalue = rand() % 5 + 1; 
+int cobra = cobravalue;
 
+//Caixas do pc1
 
-
-
+printf("Escolha uma caixa de 1 a 5\n");
+printf("___ ___ ___ ___ ___\n");
+printf("|1| |2| |3| |4| |5|\n");
+printf("``` ``` ``` ``` ```\n");
+while(pcchoice != cobra){
+scanf("%d", &pcchoice);
+if(turn == 1){
+printf("Jogador 1, escolha uma caixa\n");
+    if(pcchoice != cobra){
+    printf("Você escolheu a caixa %d\n", pcchoice);
+    printf("Não há cobras...\n");
+}
+else if(pcchoice == cobra){
+    printf("A caixa %d tinha uma cobra!\n", pcchoice);
+    printf("Você perdeu");
+}
+}
+if(turn == 2){
+printf("Jogador 2, escolha uma caixa\n");
+    if(pcchoice != cobra){
+    printf("Você escolheu a caixa %d\n", pcchoice);
+    printf("Não há cobras...\n");
+}
+else if(pcchoice == cobra){
+    printf("A caixa %d tinha uma cobra!\n", pcchoice);
+    printf("Você perdeu");
+}
+}
+}
 //Tendo em base a caixa escolhida, o jogo confere se ela é uma caixa com cobra, ou não.
 
 

@@ -389,14 +389,96 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
 }
 }
-//Seed para as caixas e cobras
-srand(time(NULL));
-int random_number = rand();
-printf("%d", random_number);
-//Geração de caixas e de cobras
-int caixa1, caixa2, caixa3, caixa4, caixa5;
-int cobra1, cobra2, cobra3, cobra4, cobra5;
 
+srand(time(NULL));
+int cobravalue = rand() % 5 + 1; 
+int cobra = cobravalue;
+
+//Input pc1 e pc2
+
+int pcchoice;
+int pcchoice2;
+
+printf("Pressione de 1 a 5 para escolher uma caixa\n");
+do{
+    scanf("%d", &pcchoice);
+if(pcchoice == 1){
+printf("Jogador 1 escolheu a caixa 1\n");
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice2 == 1){
+printf("Jogador 2 escolheu a caixa 1\n");
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice == 2){
+printf("Jogador 1 escolheu a caixa 2\n");
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice2 == 2){
+printf("Jogador 2 escolheu a caixa 2\n");
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice == 3){
+printf("Jogador 1 escolheu a caixa 3\n");
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice2 == 3){
+printf("Jogador 2 escolheu a caixa 3\n");
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice == 4){
+printf("Jogador 1 escolheu a caixa 4\n");
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice2 == 4){
+printf("Jogador 2 escolheu a caixa 4\n");
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice == 5){
+printf("Jogador 1 escolheu a caixa 5\n");
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+if(pcchoice2 == 5){
+printf("Jogador 2 escolheu a caixa 5\n");
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu...\n");
+}
+}
+}
+while(pcchoice, pcchoice2 != cobra);
+
+
+
+
+//Tendo em base a caixa escolhida, o jogo confere se ela é uma caixa com cobra, ou não.
 
 
     return 0;

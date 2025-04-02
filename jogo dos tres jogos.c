@@ -33,11 +33,11 @@ exit(0);
 else if(tecla == 1){
 printf("Se você deseja incializar o jogo PERGUNTAS E RESPOSTAS, pressione 1\n");
 
-int resposta1;
-int resposta2;
-int resposta3;
-int resposta4;
-int resposta5;
+char resposta1;
+char resposta2;
+char resposta3;
+char resposta4;
+char resposta5;
 int jogo, jogoinicio;
 
 scanf("%d", &jogo);
@@ -393,7 +393,6 @@ system("cls");//executar código em Windows
 system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
 }
-}
 
 //Input pc1 e pc2
 
@@ -553,6 +552,7 @@ system("cls");//executar código em Windows
 #else
 system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif     
+}
 }
 
 

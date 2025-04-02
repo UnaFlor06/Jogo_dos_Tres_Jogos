@@ -1,15 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 //Provérbio do dia: Suicídio é preferível à desenvolver front-end em C
 int main()
 {
 //FUNCIONALIDADES BÁSICAS DO MENU
-    //Obeservações sobre o menu:
-        //A princípio, o menu utilizava "switch case" para suas funcionalidades.
-        //Ainda é possível ver alguns resquícios no código.
-        //Por isso o usuário precisa apertar a tecla de seleção mais de uma vez.
-        //A intenção é mudar isso posteriormente, mas, pelo momento, deixa assim porque o menu está funcionando.
 int tecla;
 
     // Texto placeholder (final será em ASCII)
@@ -21,12 +17,20 @@ printf("3 - Gousma of War\n");
 printf("4 - Sair\n");
 scanf("%d", &tecla);
 
-//AA Fix:
-//A UX não está muito intuitiva pelo momento, preciso que você remova a necessidade de apertar tantos botões.
+//Código que termina o jogo
+
+if(tecla == 4){
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+exit(0);
+}
 
 //SELEÇÃO DE JOGO "Perguntas e Respostas"
 
-if(tecla == 1){
+else if(tecla == 1){
 printf("Se você deseja incializar o jogo PERGUNTAS E RESPOSTAS, pressione 1\n");
 
 int resposta1;
@@ -228,6 +232,7 @@ printf("Fim do jogo PERGUNTAS E RESPOSTAS\n");
 printf("Você acertou x perguntas\n"); //A intenção era fazer com que as quantidades de acertos do player seja contada.
 
 }
+
 //Seleção de jogo "Cobra na Caixa"
 
 else if(tecla == 2){
@@ -392,49 +397,167 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 
 //Input pc1 e pc2
 
-int pcchoice;
-int turn = 0;
+int pcchoice, pcchoice2;
+int turn = 8;
 
 srand(time(NULL));
-turn = 1 + rand() % 3;
 int cobravalue = rand() % 5 + 1; 
 int cobra = cobravalue;
 
-//Caixas do pc1
+//Caixas 
+
+fflush(stdin);
 
 printf("Escolha uma caixa de 1 a 5\n");
 printf("___ ___ ___ ___ ___\n");
 printf("|1| |2| |3| |4| |5|\n");
 printf("``` ``` ``` ``` ```\n");
-while(pcchoice != cobra){
+
+//Input pc1
+do{
+if(turn == 8){
 scanf("%d", &pcchoice);
-if(turn == 1){
-printf("Jogador 1, escolha uma caixa\n");
-    if(pcchoice != cobra){
-    printf("Você escolheu a caixa %d\n", pcchoice);
-    printf("Não há cobras...\n");
-}
-else if(pcchoice == cobra){
-    printf("A caixa %d tinha uma cobra!\n", pcchoice);
-    printf("Você perdeu");
-}
-}
-if(turn == 2){
-printf("Jogador 2, escolha uma caixa\n");
-    if(pcchoice != cobra){
-    printf("Você escolheu a caixa %d\n", pcchoice);
-    printf("Não há cobras...\n");
-}
-else if(pcchoice == cobra){
-    printf("A caixa %d tinha uma cobra!\n", pcchoice);
-    printf("Você perdeu");
+switch(pcchoice){
+case 1:
+pcchoice == 1;
+if(pcchoice == 1){
+    printf("Jogador 1 escolheu a caixa %d\n", pcchoice);
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
 }
 }
+break;
+case 2:
+pcchoice == 2;
+if(pcchoice == 2){
+printf("Jogador 1 escolheu a caixa %d\n", pcchoice);
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
 }
-//Tendo em base a caixa escolhida, o jogo confere se ela é uma caixa com cobra, ou não.
+}
+break;
+case 3:
+pcchoice == 3;
+if(pcchoice == 3){
+printf("Jogador 1 escolheu a caixa %d\n", pcchoice);
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+case 4:
+pcchoice == 4;
+if(pcchoice == 4){
+printf("Jogador 1 escolheu a caixa %d\n", pcchoice);
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+case 5:
+pcchoice == 5;
+if(pcchoice == 5){
+printf("Jogador 1 escolheu a caixa %d\n", pcchoice);
+    if(pcchoice == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+}
+if(pcchoice == cobra){
+turn = cobra;
+}
+}
+
+//Input pc2
+
+if(turn ==8){
+scanf("%d", &pcchoice2);
+switch(pcchoice2){
+case 1:
+pcchoice2 == 1;
+if(pcchoice2 == 1){
+printf("Jogador 2 escolheu a caixa %d\n", pcchoice2);
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+case 2:
+pcchoice2 == 2;
+if(pcchoice2 == 2){
+printf("Jogador 2 escolheu a caixa %d\n", pcchoice2);
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+case 3:
+pcchoice2 == 3;
+if(pcchoice2 == 3){
+printf("Jogador 2 escolheu a caixa %d\n", pcchoice2);
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+case 4:
+pcchoice2 == 4;
+if(pcchoice2 == 4){
+printf("Jogador 2 escolheu a caixa %d\n", pcchoice2);
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+case 5:
+pcchoice2 == 5;
+if(pcchoice2 == 5){
+printf("Jogador 2 escolheu a caixa %d\n", pcchoice2);
+    if(pcchoice2 == cobra){
+    printf("Você encontrou uma cobra!\n");
+    printf("Você perdeu\n");
+}
+}
+break;
+}
+if(pcchoice2 == cobra){
+turn = cobra;
+}
+}
+
+}while(turn != cobra);
+
+//Fim das rodadas dos jogadores
+
+
+
+printf("Pressione 2 para rejogar\n");
+printf("ou 4 para voltar ao menu\n");
+fflush(stdin);
+scanf("%d", &tecla);
+fflush(stdin);
+switch(tecla){
+case 2:
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif     
+}
 
 
     return 0;
+
 }
 
 

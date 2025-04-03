@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
+#define YELLOW  "\x1B[33m"
+#define RESET   "\x1B[0m"
+void typeText(const char *text, int delay) {
+    while (*text) {
+    putchar(*text++);
+    fflush(stdout);  // Garante que o texto apareça imediatamente
+    usleep(delay * 1000);  // Converte milissegundos para microssegundos
+}
+}
 
 //Provérbio do dia: Suicídio é preferível à desenvolver front-end em C
 int main()
@@ -9,12 +19,14 @@ int main()
 int tecla;
 
     // Texto placeholder (final será em ASCII)
-printf("Joguinho Dos Três Jogos\n"); //placeholder
-printf("Pressione as teclas para jogar os jogos\n"); //placeholder
-printf("1 - Perguntas e Respostas\n");
-printf("2 - Cobra na Caixa!\n");
-printf("3 - Gousma of War\n");
-printf("4 - Sair\n");
+typeText("==================================================\n", 50);
+typeText(YELLOW"             Joguinho Dos Três Jogos\n", 50);
+typeText(RESET"==================================================\n", 50);
+typeText(YELLOW"\tPressione as teclas para jogar os jogos\n", 20);
+typeText("\t1 - Perguntas e Respostas\n", 20);
+typeText("\t2 - Cobra na Caixa!\n", 20);
+typeText("\t3 - Gousma of War\n", 20);
+typeText("\t4 - Sair\n\t", 20);
 scanf("%d", &tecla);
 
 //Código que termina o jogo
@@ -31,7 +43,7 @@ exit(0);
 //SELEÇÃO DE JOGO "Perguntas e Respostas"
 
 else if(tecla == 1){
-printf("Se você deseja incializar o jogo PERGUNTAS E RESPOSTAS, pressione 1\n");
+typeText("Se você deseja incializar o jogo PERGUNTAS E RESPOSTAS, pressione 1\n", 20);
 
 char resposta1;
 char resposta2;
@@ -40,24 +52,18 @@ char resposta4;
 char resposta5;
 int jogo, jogoinicio;
 
-scanf("%d", &jogo);
-switch(jogo){
-case 1:
-#ifdef _WIN32
-system("cls");//executar código em Windows
-#else//não altere esse código, se não o terminal não será limpo
-system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
-#endif
-printf("PERGUNTAS E RESPOSTAS\n");
-printf("Pressione 1 para continuar ou 4 para voltar\n");
-break;
-}
 scanf("%d", &jogoinicio);
 switch(jogoinicio){
 case 1:
-printf("O jogo 'Perguntas e Respostas' é muito simples. Você, jogador e/ou jogadora seram inquiridos um total de 5 perguntas dividias em A, B, C e D\n");
-printf("Para ganhar nesse jogo, é necessário responder todas as perguntas corretamente\n");
-printf("Pressione 1 para continuar ou 4 para voltar\n");
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else //Não altere esse código, se não o terminal não será limpo
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+
+typeText("O jogo 'Perguntas e Respostas' é muito simples. Você, jogador e/ou jogadora seram inquiridos um total de 5 perguntas dividias em A, B, C e D\n", 20);
+typeText("Para ganhar nesse jogo, é necessário responder todas as perguntas corretamente\n", 20);
+typeText("Pressione 1 para continuar ou 4 para voltar\n", 20);
 break;
 }
 
@@ -70,27 +76,32 @@ fflush(stdin);
 tecla = getchar();
 switch(resposta1){
 case 1:
-printf("Pergunta 1-)\n");
-printf("Que cidade Portugal tomou no norte da África em 1415?\n");
-printf("a) Marrocos\n");
-printf("b) Gibraltar\n");
-printf("c) Cartago\n");
-printf("d) Ceuta\n");
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else //Não altere esse código, se não o terminal não será limpo
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+typeText("Pergunta 1-)\n", 20);
+typeText("Que cidade Portugal tomou no norte da África em 1415?\n", 20);
+typeText("a) Marrocos\n", 20);
+typeText("b) Gibraltar\n", 20);
+typeText("c) Cartago\n", 20);
+typeText("d) Ceuta\n", 20);
 break;
 }
 scanf("%c", &resposta1);
 switch(resposta1){
 case 'a':
-printf("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'b':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'c':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'd':
-printf("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n");
+typeText("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n", 20);
 break;
 }
 
@@ -100,30 +111,35 @@ fflush(stdin);
 scanf("%d", &resposta2);
 fflush(stdin);
 
-tecla =getchar();
+tecla = getchar();
 switch(resposta2){
 case 1:
-printf("Pergunta 2-)\n");
-printf("Qual a primeira música a ser cantada em um computador?\n");
-printf("a) Daisy Bell\n");
-printf("b) Fly of the Valkyries\n");
-printf("c) 1812 Overture\n");
-printf("d) Big Iron\n");
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else //Não altere esse código, se não o terminal não será limpo
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+typeText("Pergunta 2-)\n", 20);
+typeText("Qual a primeira música a ser cantada em um computador?\n", 20);
+typeText("a) Daisy Bell\n", 20);
+typeText("b) Fly of the Valkyries\n", 20);
+typeText("c) 1812 Overture\n", 20);
+typeText("d) Big Iron\n", 20);
 break;
 }
 scanf("%c", &resposta2);
 switch(resposta2){
 case 'a':
-printf("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n");
+typeText("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n", 20);
 break;
 case 'b':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'c':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'd':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 }
 
@@ -133,30 +149,35 @@ fflush(stdin);
 scanf("%d", &resposta3);
 fflush(stdin);
 
-tecla =getchar();
+tecla = getchar();
 switch(resposta3){
 case 1:
-printf("Pergunta 3-)\n");
-printf("Qual a pessoa capaz de quebrar um celular da NOKIA?\n");
-printf("a) Bruce Lee\n");
-printf("b) Jackie Chan\n");
-printf("c) Chuck Norris\n");
-printf("d) Jean Claude Vandame\n");
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else //Não altere esse código, se não o terminal não será limpo
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+typeText("Pergunta 3-)\n", 20);
+typeText("Qual a pessoa capaz de quebrar um celular da NOKIA?\n", 20);
+typeText("a) Bruce Lee\n", 20);
+typeText("b) Jackie Chan\n", 20);
+typeText("c) Chuck Norris\n", 20);
+typeText("d) Jean Claude Vandame\n", 20);
 break;
 }
 scanf("%c", &resposta3);
 switch(resposta3){
 case 'a':
-printf("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'b':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'c':
-printf("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n");
+typeText("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n", 20);
 break;
 case 'd':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 }
 
@@ -166,30 +187,35 @@ fflush(stdin);
 scanf("%d", &resposta4);
 fflush(stdin);
 
-tecla =getchar();
+tecla = getchar();
 switch(resposta4){
 case 1:
-printf("Pergunta 4-)\n");
-printf("Bicoito ou bolacha?\n");
-printf("a) Biscoito\n");
-printf("b) Bolacha\n");
-printf("c) Biscuit\n");
-printf("d) Comida\n");
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else //Não altere esse código, se não o terminal não será limpo
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif
+typeText("Pergunta 4-)\n", 20);
+typeText("Bicoito ou bolacha?\n", 20);
+typeText("a) Biscoito\n", 20);
+typeText("b) Bolacha\n", 20);
+typeText("c) Biscuit\n", 20);
+typeText("d) Comida\n", 20);
 break;
 }
 scanf("%c", &resposta4);
 switch(resposta4){
 case 'a':
-printf("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n");
+typeText("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'b':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'c':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar");
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
 break;
 case 'd':
-printf("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar");
+typeText("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n", 20);
 break;
 }
 //Pergunta 5
@@ -198,68 +224,98 @@ fflush(stdin);
 scanf("%d", &resposta5);
 fflush(stdin);
 
-tecla =getchar();
+tecla = getchar();
 switch(resposta5){
 case 1:
-printf("Pergunta 5-)\n");
-printf("QUAL FOI A PRIMEIRA LINGUAGEM DE PROGRAMAÇÃO\n");
-printf("a) C\n");
-printf("b) FORTRAN\n");
-printf("c) BASIC\n");
-printf("d) Código Morse\n");
-break;
-}
-scanf("%c", &resposta5);
-switch(resposta5){
-case 'a':
-printf("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n");
-break;
-case 'b':
-printf("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n");
-break;
-case 'c':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
-break;
-case 'd':
-printf("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n");
-break;
-}
-
-
-//Fim do jogo "PERGUNTAS E RESPOSTAS"
-
-printf("Fim do jogo PERGUNTAS E RESPOSTAS\n");
-printf("Você acertou x perguntas\n"); //A intenção era fazer com que as quantidades de acertos do player seja contada.
-
-}
-
-//Seleção de jogo "Cobra na Caixa"
-
-else if(tecla == 2){
-printf("Se você deseja inicializar o jogo COBRA NA CAIXA, pressione 2\n");
-
-int jogo2, jogoinicio2;
-
-scanf("%d", &jogo2);
-switch(jogo2){
-case 2:
 #ifdef _WIN32
 system("cls");//executar código em Windows
 #else //Não altere esse código, se não o terminal não será limpo
 system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
-printf("COBRA NA CAIXA\n");
-printf("Pressione 2 para continuar ou 4 para voltar\n");
+typeText("Pergunta 5-)\n", 20);
+typeText("QUAL FOI A PRIMEIRA LINGUAGEM DE PROGRAMAÇÃO\n", 20);
+typeText("a) C\n", 20);
+typeText("b) FORTRAN\n", 20);
+typeText("c) BASIC\n", 20);
+typeText("d) Código Morse\n", 20);
 break;
 }
+scanf("%c", &resposta5);
+switch(resposta5){
+case 'a':
+typeText("NÃO, ESTA NÃO É A RESPOSTA\n""Pressione 1 para continuar\n", 20);
+break;
+case 'b':
+typeText("ESTÁ CORRETA A RESPOSTA!\n""Pressione 1 para continuar\n", 20);
+break;
+case 'c':
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
+break;
+case 'd':
+typeText("NÃO, ESTA NÃO É A RESPOSTA CORRETA\n""Pressione 1 para continuar\n", 20);
+break;
+}
+
+//Resultado das perguntas 
+
+if(resposta1 == 'd'){
+resposta1 = 1;
+}
+else{
+resposta1 = 0;
+}
+if(resposta2 == 'a'){
+resposta2 = 1;
+}
+else{
+resposta2 = 0;
+}
+if(resposta3 == 'c'){
+resposta3 = 1;
+}
+else{
+resposta3 = 0;
+}
+if(resposta4 == 'd'){
+resposta4 = 1;
+}
+else{
+resposta4 = 0;
+}
+if(resposta5 == 'b'){
+resposta5 = 1;
+}
+else{
+resposta5 = 0;
+}
+
+int respostaend = resposta1+resposta2+resposta3+resposta4+resposta5;
+
+typeText(("Você acertou %d das perguntas\n", respostaend), 20);
+}
+
+//Seleção de jogo "Cobra na Caixa"
+
+else if(tecla == 2){
+typeText("Se você deseja inicializar o jogo COBRA NA CAIXA, pressione 2\n", 20);
+
+int jogo2, jogoinicio2;
+
 scanf("%d", &jogoinicio2);
 switch(jogoinicio2){
 case 2:
-printf("O jogo COBRA NA CAIXA é um jogo de escolhas...\n");
-printf("Você e mais outro jogador estão presos em uma tumba egípicia antiga, e é seu objetivo fugir dessa\n");
-printf("Cuidado... Pois nunca se sabe qual é o caminho certo\n");
-printf("E nunca se sabe onde as cobras espreitam...\n");
-printf("Pressione 2 para seguir para a seleção de personagens\n");
+#ifdef _WIN32
+system("cls");//executar código em Windows
+#else
+system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
+#endif  
+typeText("O jogo COBRA NA CAIXA é um jogo de escolhas...\n", 20);
+typeText("Você e mais outro jogador estão presos em uma tumba egípicia antiga, e é seu objetivo fugir dessa\n", 20);
+typeText("Cuidado... Pois nunca se sabe qual é o caminho certo\n", 20);
+typeText("E nunca se sabe onde as cobras espreitam...\n", 20);
+printf("\n");
+printf("\n");
+typeText("Pressione 2 para seguir para a seleção de personagens\n", 20);
 break;
 }
 
@@ -281,14 +337,14 @@ system("cls");//executar código em Windows
 #else
 system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 #endif
-printf("SELECIONE SEU PERSONAGEM! Jogador 1\n");
-printf("1-) Fulano\n");
-printf("2-) Fulana\n");
-printf("3-) Ciclano\n");
-printf("4-) Ciclana\n");
-printf("5-) Beltrano\n");
-printf("6-) Beltrana\n");
-printf("7-) Nome\n");
+typeText("SELECIONE SEU PERSONAGEM! Jogador 1\n", 20);
+typeText("1-) Fulano\n", 20);
+typeText("2-) Fulana\n", 20);
+typeText("3-) Ciclano\n", 20);
+typeText("4-) Ciclana\n", 20);
+typeText("5-) Beltrano\n", 20);
+typeText("6-) Beltrana\n", 20);
+typeText("7-) Nome\n", 20);
 
 //Player 1 select
 
@@ -297,96 +353,108 @@ switch(pc1select){
 case 1:
 pc1select == 1;
 if(pc1select == 1){
-printf("Jogador 1 escolheu Fulano\n");
+typeText("Jogador 1 escolheu Fulano\n", 20);
 }
 break;
 case 2:
 pc1select == 2;
 if(pc1select == 2){
-printf("Jogador 1 escolheu Fulana\n");
+typeText("Jogador 1 escolheu Fulana\n", 20);
 }
 break;
 case 3:
 pc1select == 3;
 if(pc1select == 3){
-printf("Jogador 1 escolheu Ciclano\n");
+typeText("Jogador 1 escolheu Ciclano\n", 20);
 }
 break;
 case 4:
 pc1select == 4;
 if(pc1select == 4){
-printf("Jogador 1 escolheu Ciclan\n");
+typeText("Jogador 1 escolheu Ciclan\n", 20);
 }
 break;
 case 5:
 pc1select == 5;
 if(pc1select == 5){
-printf("Jogador 1 escolheu Beltrano\n");    
+typeText("Jogador 1 escolheu Beltrano\n", 20);    
 }
 break;
 case 6:
 pc1select == 6;
 if(pc1select == 6){
-printf("Jogador 1 escolheu Beltrana\n");
+typeText("Jogador 1 escolheu Beltrana\n", 20);
 }
 break;
 case 7:
 pc1select == 7;
 if(pc1select == 7){
-printf("Jogador 1 escolheu Nome\n");
+typeText("Jogador 1 escolheu Nome\n", 20);
 }
 break;
 }
 
 //Player 2 select
 
-printf("SELECIONE SEU PERSONAGEM! Jogador 2\n");
+typeText("SELECIONE SEU PERSONAGEM! Jogador 2\n", 20);
 
 scanf("%d", &pc2select);
 switch(pc2select){
 case 1:
 pc2select == 1;
 if(pc2select == 1){
-printf("Jogador 2 escolheu Fulano\n");
+typeText("Jogador 2 escolheu Fulano\n", 20);
 }
 break;
 case 2:
 pc2select == 2;
 if(pc2select == 2){
-printf("Jogador 2 escolheu Fulana\n");
+typeText("Jogador 2 escolheu Fulana\n", 20);
 }
 break;
 case 3:
 pc2select == 3;
 if(pc2select == 3){
-printf("Jogador 2 escolheu Ciclano\n");
+typeText("Jogador 2 escolheu Ciclano\n", 20);
 }
 break;
 case 4:
 pc2select == 4;
 if(pc2select == 4){
-printf("Jogador 2 escolheu Ciclana\n");
+typeText("Jogador 2 escolheu Ciclana\n", 20);
 }
 break;
 case 5:
 pc2select == 5;
 if(pc2select == 5){
-printf("Jogador 2 escolheu Beltrano\n");    
+typeText("Jogador 2 escolheu Beltrano\n", 20);    
 }
 break;
 case 6:
 pc2select == 6;
 if(pc2select == 6){
-printf("Jogador 2 escolheu Beltrana\n");
+typeText("Jogador 2 escolheu Beltrana\n", 20);
 }
 break;
 case 7:
 pc2select == 7;
 if(pc2select == 7){
-printf("Jogador 2 escolheu Nome\n");
+typeText("Jogador 2 escolheu Nome\n", 20);
 }
 break;
 }
+}
+
+printf("\n");
+printf("\n");
+printf("\n");
+typeText("Pressione 2 para continuar com o jogo\n", 20);
+fflush(stdin);
+scanf("%d", &tecla);
+fflush(stdin);
+
+switch(tecla){
+case 2: 
 #ifdef _WIN32
 system("cls");//executar código em Windows
 #else
@@ -396,7 +464,8 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 
 //Input pc1 e pc2
 
-int pcchoice, pcchoice2;
+int pcchoice = 0;
+int pcchoice2 = 0;
 int turn = 8;
 
 srand(time(NULL));
@@ -407,7 +476,7 @@ int cobra = cobravalue;
 
 fflush(stdin);
 
-printf("Escolha uma caixa de 1 a 5\n");
+typeText("Escolha uma caixa de 1 a 5\n", 20);
 printf("___ ___ ___ ___ ___\n");
 printf("|1| |2| |3| |4| |5|\n");
 printf("``` ``` ``` ``` ```\n");
@@ -483,7 +552,7 @@ pcchoice2 == 1;
 if(pcchoice2 == 1){
 printf("Jogador 2 escolheu a caixa %d\n", pcchoice2);
     if(pcchoice2 == cobra){
-    printf("Você encontrou uma cobra!\n");
+    printf("Você encontrou uma cobra!\n", 20);
     printf("Você perdeu\n");
 }
 }
@@ -540,8 +609,8 @@ turn = cobra;
 
 
 
-printf("Pressione 2 para rejogar\n");
-printf("ou 4 para voltar ao menu\n");
+typeText("Pressione 2 para rejogar\n", 20);
+typeText("ou 4 para voltar ao menu\n", 20);
 fflush(stdin);
 scanf("%d", &tecla);
 fflush(stdin);

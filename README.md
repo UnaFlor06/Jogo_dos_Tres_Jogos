@@ -53,4 +53,4 @@ Para impedir que o jogador entre em uma situação de não perder, eternamente, 
 
 5- GOUSMA OF WAR
 
-Este jogo vem no próximo update.
+Este jogo vem no próximo update... Eu infelizmente, genuinamente, não consegui realiza-lo.

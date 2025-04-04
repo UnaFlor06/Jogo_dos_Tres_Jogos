@@ -7,25 +7,24 @@
 void typeText(const char *text, int delay) {
     while (*text) {
     putchar(*text++);
-    fflush(stdout);  // Garante que o texto apareça imediatamente
-    usleep(delay * 1000);  // Converte milissegundos para microssegundos
+    fflush(stdout);  
+    usleep(delay * 1000);   
 }
 }
 
-//Provérbio do dia: Suicídio é preferível à desenvolver front-end em C
+//Por favor, não me faça mais codar front-end em C
 int main()
 {
 //FUNCIONALIDADES BÁSICAS DO MENU
 int tecla;
 
-    // Texto placeholder (final será em ASCII)
 typeText("==================================================\n", 50);
 typeText(YELLOW"             Joguinho Dos Três Jogos\n", 50);
 typeText(RESET"==================================================\n", 50);
 typeText(YELLOW"\tPressione as teclas para jogar os jogos\n", 20);
 typeText("\t1 - Perguntas e Respostas\n", 20);
 typeText("\t2 - Cobra na Caixa!\n", 20);
-typeText("\t3 - Gousma of War\n", 20);
+typeText("\t3 - Gousma of War |vindo no próximo update:)|\n", 20);
 typeText("\t4 - Sair\n\t", 20);
 scanf("%d", &tecla);
 
@@ -63,7 +62,7 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 
 typeText("O jogo 'Perguntas e Respostas' é muito simples. Você, jogador e/ou jogadora seram inquiridos um total de 5 perguntas dividias em A, B, C e D\n", 20);
 typeText("Para ganhar nesse jogo, é necessário responder todas as perguntas corretamente\n", 20);
-typeText("Pressione 1 para continuar ou 4 para voltar\n", 20);
+typeText("Pressione 1 para continuar\n", 20);
 break;
 }
 
@@ -312,7 +311,6 @@ system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
 typeText("O jogo COBRA NA CAIXA é um jogo de escolhas...\n", 20);
 typeText("Você e mais outro jogador estão presos em uma tumba egípicia antiga, e é seu objetivo fugir dessa\n", 20);
 typeText("Cuidado... Pois nunca se sabe qual é o caminho certo\n", 20);
-typeText("E nunca se sabe onde as cobras espreitam...\n", 20);
 printf("\n");
 printf("\n");
 typeText("Pressione 2 para seguir para a seleção de personagens\n", 20);
@@ -607,21 +605,6 @@ turn = cobra;
 
 //Fim das rodadas dos jogadores
 
-
-
-typeText("Pressione 2 para rejogar\n", 20);
-typeText("ou 4 para voltar ao menu\n", 20);
-fflush(stdin);
-scanf("%d", &tecla);
-fflush(stdin);
-switch(tecla){
-case 2:
-#ifdef _WIN32
-system("cls");//executar código em Windows
-#else
-system("clear");//executar código em Unix(Linux/MacOS/FreeBSD)
-#endif     
-}
 }
 
 
